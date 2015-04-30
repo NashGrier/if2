@@ -7,72 +7,81 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="oled_color" id="3">
-        <field name="OBJECT">GREEN</field>
-        <next>
-          <block type="oled_cleardisplay" id="4">
+      <block type="controls_repeat" id="28" inline="true">
+        <value name="TIMES">
+          <block type="math_number" id="29">
+            <field name="NUM">15</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="oled_color" id="3">
+            <field name="OBJECT">GREEN</field>
             <next>
-              <block type="oled_drawtext" id="5">
-                <field name="TEXT">jacklyn is crazy</field>
+              <block type="oled_cleardisplay" id="4">
                 <next>
-                  <block type="controls_if" id="6" inline="false">
-                    <mutation elseif="1" else="1"></mutation>
-                    <value name="IF0">
-                      <block type="logic_compare" id="7" inline="true">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="sensor_object" id="8">
-                            <field name="OBJECT">LEFTFRONT</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="9">
-                            <field name="NUM">75</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="movement_right" id="10"></block>
-                    </statement>
-                    <value name="IF1">
-                      <block type="logic_compare" id="11" inline="true">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="sensor_object" id="12">
-                            <field name="OBJECT">RIGHTFRONT</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="13">
-                            <field name="NUM">75</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO1">
-                      <block type="movement_left" id="14"></block>
-                    </statement>
-                    <statement name="ELSE">
-                      <block type="movement_forward" id="15"></block>
-                    </statement>
+                  <block type="oled_drawtext" id="5">
+                    <field name="TEXT">jacklyn is crazy</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="6" inline="false">
+            <mutation elseif="1" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="7" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="sensor_object" id="8">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="9">
+                    <field name="NUM">75</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="movement_right" id="10"></block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="11" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="sensor_object" id="12">
+                    <field name="OBJECT">RIGHTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="13">
+                    <field name="NUM">75</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="movement_left" id="14"></block>
+            </statement>
+            <statement name="ELSE">
+              <block type="movement_forward" id="15"></block>
+            </statement>
+            <next>
+              <block type="robot_delay" id="16" inline="true">
+                <value name="DELAY">
+                  <block type="math_number" id="17">
+                    <field name="NUM">200</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_color" id="18">
+                    <field name="OBJECT">BLACK</field>
                     <next>
-                      <block type="robot_delay" id="16" inline="true">
-                        <value name="DELAY">
-                          <block type="math_number" id="17">
-                            <field name="NUM">200</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="oled_color" id="18">
-                            <field name="OBJECT">BLACK</field>
-                            <next>
-                              <block type="oled_drawtext" id="19">
-                                <field name="TEXT">the end</field>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
+                      <block type="oled_drawtext" id="19">
+                        <field name="TEXT">the end</field>
                       </block>
                     </next>
                   </block>
